@@ -1,109 +1,64 @@
-# MyProject_DigitalArtWatermarking
+# Digital Art Commission & Watermarking Portal
 
-## Software Engineering - Individual Project
+## 1. Project Information
 
 | Field | Details |
 |---|---|
 | Student Name | Shrikar Desai |
 | SRN | PES1UG24CS916 |
 | Section | 4H |
-| Problem Statement | #58 |
 | Project Name | Digital Art Commission & Watermarking Portal |
+| Problem Statement | #58 |
 | Domain | Media, Events & Community |
 
-## Project Overview
+## 2. Problem Statement
 
-An art commission platform where clients submit visual creative briefs, artists submit watermarked WIP progress drafts, and final high-resolution source files unlock upon milestone payment.
+The portal supports digital-art commissions by allowing artists to share watermarked work-in-progress drafts, collect client feedback and milestone payments, and securely release final high-resolution source files after payment verification.
 
-## Repository Organization
-
-This repository follows the individual-project submission structure communicated for the Software Engineering lab.
-
-### 1-RE
-Requirements Engineering deliverables:
-- Problem statement
-- Exactly 5 Functional Requirements
-- Exactly 2 Non-Functional Requirements
-- Requirements Traceability Matrix (RTM)
-- Core use-case flow specification
-
-### 2-Architectural-Diagram
-Architecture and UML deliverables:
-- UML Use-Case Diagram
-- UML Component Diagram
-- Editable diagram source files
-- Architecture justification
-
-**Selected architectural style:** Microservices Architecture
-
-### 3-GitHub-Jira-Screenshots
-Evidence from GitHub and Jira:
-- Repository/project creation screenshots
-- Commit/history evidence
-- Jira project / board / issue screenshots
-
-> Add only actual screenshots captured from your GitHub and Jira work.
-
-### 4-SRS-WBS
-Software Requirements Specification and Work Breakdown Structure:
-- SRS document
-- WBS / work-breakdown steps
-
-### 5-GitHub-Copilot
-GitHub Copilot evidence:
-- Screenshots of Copilot-generated or Copilot-assisted code, and/or
-- Repository link containing the generated code
-
-### 6-Software-Testing
-Software Testing practice deliverables:
-- Assigned game application repository/reference
-- Test cases and observed results
-- Bug/patch evidence
-- Retest evidence after the fix
-- Final repository link after fixing the code
-
-## Current Deliverables
-
-- [x] Problem Statement #58
-- [x] 5 Functional Requirements
-- [x] 2 Non-Functional Requirements
-- [x] Requirements Traceability Matrix (RTM)
-- [x] UML Use-Case Diagram with `<<include>>` and `<<extend>>`
-- [x] Use-Case Flow Specification
-- [x] UML Component Diagram
-- [x] Architecture justification
-- [ ] GitHub/Jira screenshots - add your real evidence
-- [ ] SRS and WBS - add when completed
-- [ ] GitHub Copilot evidence - add your real evidence
-- [ ] Software Testing evidence - add after the assigned testing exercise
-
-## Repository Structure
+## 3. Repository Structure
 
 ```text
-MyProject_DigitalArtWatermarking/
+digital-art-commission-watermarking-portal/
 ├── README.md
 ├── .gitignore
 ├── 1-RE/
-│   ├── problem-statement.md
-│   ├── requirements.md
-│   ├── requirements.pdf
-│   ├── use-case-flow-specification.docx
-│   └── use-case-flow-specification.pdf
 ├── 2-Architectural-Diagram/
-│   ├── use-case-diagram.png
-│   ├── use-case-diagram.pdf
-│   ├── use-case.dot
-│   ├── component-diagram.png
-│   ├── component-diagram.pdf
-│   ├── component.dot
-│   ├── architecture-justification.docx
-│   └── architecture-justification.pdf
 ├── 3-GitHub-Jira-Screenshots/
-│   └── README.md
 ├── 4-SRS-WBS/
-│   └── README.md
 ├── 5-GitHub-Copilot/
-│   └── README.md
 └── 6-Software-Testing/
-    └── README.md
 ```
+
+## 4. 1-RE - Requirements Engineering
+
+Contains the problem statement, five functional requirements, two non-functional requirements, requirements PDF, and the Requirements Traceability Matrix. The use-case flow specification is stored in `4-SRS-WBS`.
+
+## 5. 2-Architectural-Diagram
+
+Contains the use-case and component diagrams in PNG, PDF, and editable `.dot` formats, together with the architecture justification in DOCX and PDF formats.
+
+## 6. 3-GitHub-Jira-Screenshots
+
+**Pending evidence.** This folder contains no screenshots yet. Only authentic GitHub and Jira evidence will be added.
+
+## 7. 4-SRS-WBS
+
+Contains the existing use-case flow specification and submission notes. Additional SRS or WBS material has not been invented and remains pending where applicable.
+
+## 8. 5-GitHub-Copilot
+
+**Pending evidence.** No Copilot screenshots, generated-code evidence, or repository claims are included yet.
+
+## 9. 6-Software-Testing
+
+**Pending evidence.** No testing cases, screenshots, bug-fix evidence, or repository links are included yet.
+
+## 10. Submission Checklist
+
+- [x] Project information and Problem Statement #58 recorded
+- [x] Requirements Engineering documents organized
+- [x] Architectural diagrams and source files preserved
+- [x] Existing use-case flow specification preserved
+- [ ] GitHub and Jira evidence added
+- [ ] GitHub Copilot evidence added
+- [ ] Software Testing evidence added

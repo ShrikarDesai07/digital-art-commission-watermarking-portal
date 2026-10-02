@@ -1,33 +1,18 @@
-# Requirements Engineering - Problem Statement #58
-
-## Project
-**Digital Art Commission & Watermarking Portal**
+# Requirements Table
 
 ## Functional Requirements
 
-| ID | Type | Description | Priority | Acceptance Criteria | Rationale |
-|---|---|---|---|---|---|
-| FR-001 | Functional | The system shall apply a dynamic diagonal overlay watermark to all draft illustrations uploaded by artists before displaying them to the client. | High | Pass: Watermarked draft is rendered in the client portal. Fail: An unwatermarked draft is exposed. | Protects WIP artwork before final payment. |
-| FR-002 | Functional | The system shall allow the Client Buyer to view a watermarked WIP draft and provide feedback or approval. | High | Pass: Client can review and submit feedback/approval. Fail: Review action is unavailable or not recorded. | Supports the iterative commission workflow. |
-| FR-003 | Functional | The system shall allow the Client Buyer to make the required milestone payment through the payment service. | High | Pass: Successful payment is recorded against the milestone. Fail: Failed/pending payment is not treated as completed. | Payment is required before final asset release. |
-| FR-004 | Functional | The system shall unlock the final high-resolution source file only after successful verification of the required milestone payment. | High | Pass: Final asset becomes available after verified payment. Fail: Asset is exposed before verified payment. | Prevents premature release of the paid deliverable. |
-| FR-005 | Functional | The system shall allow an authorized Client Buyer to download the final high-resolution source file using a secure, time-limited download link. | High | Pass: Authorized client can download using a valid link. Fail: Unauthorized or expired links cannot retrieve the asset. | Protects the final source file during delivery. |
+| ID | Description | Priority | Acceptance Criteria | Rationale |
+|---|---|---|---|---|
+| FR-001 | The system shall allow a Digital Artist to upload a WIP illustration and shall apply a dynamic diagonal overlay watermark before the draft is displayed to the Client Buyer. | High | **Pass:** Client sees only the watermarked WIP. **Fail:** Any unwatermarked WIP is displayed. | Protects artists' work during the review stage. |
+| FR-002 | The system shall allow the Client Buyer to view a watermarked WIP and submit review feedback or approval for the current milestone. | High | **Pass:** Feedback/approval is stored against the milestone and visible to the artist. | Supports iterative commission review. |
+| FR-003 | The system shall allow the Client Buyer to initiate and complete a milestone payment through the Payment Service. | High | **Pass:** A successful payment creates a recorded payment event for the milestone. **Fail:** An unsuccessful payment is not treated as paid. | Payment gates the release of the final asset. |
+| FR-004 | The system shall unlock the final high-resolution asset only after the required milestone payment is successfully verified. | High | **Pass:** Eligible client receives a download option after verified payment. **Fail:** High-resolution asset remains inaccessible before payment. | Prevents premature exposure of paid deliverables. |
+| FR-005 | The system shall allow the Digital Artist to upload the final high-resolution source file and allow an eligible Client Buyer to download it through a time-limited secure link. | High | **Pass:** Download works for an eligible client using a valid link. **Fail:** Unauthorized or expired links cannot retrieve the asset. | Completes the commission handoff while protecting the source file. |
 
 ## Non-Functional Requirements
 
 | ID | Type | Description | Priority | Acceptance Criteria | Rationale |
 |---|---|---|---|---|---|
-| NFR-001 | Performance & Security | Final high-resolution asset downloads must generate expiring signed S3 URLs valid for 60 minutes only. | High | Tests confirm acceptable download-link generation latency and that links become invalid after 60 minutes. | Limits the exposure period of high-value source files. |
-| NFR-002 | Security | Access to commission data and assets shall be restricted to authenticated and authorized users associated with the relevant commission. | High | Unauthorized users cannot access private commission data or final assets. | Protects artwork, client information, and commission data. |
-
-## Requirements Traceability Matrix (RTM)
-
-| Requirement ID | Requirement Summary | Related Use Case / Flow | Primary Component(s) | Verification / Evidence |
-|---|---|---|---|---|
-| FR-001 | Watermark every WIP before client display | Upload WIP Draft -> Apply Dynamic Watermark | Watermark Service, Asset Storage | Inspect uploaded WIP in client portal and verify watermark is present. |
-| FR-002 | Client reviews WIP and gives feedback/approval | Review WIP; Submit Feedback / Approval | Client & Artist Portal, Order Manager | Submit feedback/approval and verify it is stored against the commission. |
-| FR-003 | Process milestone payment | Make Milestone Payment -> Verify Payment | Payment Service, Order Manager | Complete a successful payment and confirm milestone status changes to paid. |
-| FR-004 | Unlock final asset only after payment verification | Verify Payment -> Unlock Final Asset | Order Manager, Asset Storage & Secure Delivery | Attempt access before and after verified payment and compare results. |
-| FR-005 | Secure final asset download | Download Final Asset -> Generate Signed URL | Asset Storage & Secure Delivery, Portal | Verify authorized client receives a working time-limited download link. |
-| NFR-001 | Signed URL expires after 60 minutes | Generate Signed URL | Asset Storage & Secure Delivery | Validate URL works within validity window and is rejected after expiry. |
-| NFR-002 | Restrict private assets to authorized users | Authentication / authorization across commission flow | Portal, Order Manager, Asset Storage | Test authenticated authorized, authenticated unauthorized, and unauthenticated requests. |
+| NFR-001 | Performance & Security | Final high-resolution asset downloads must generate expiring signed S3 URLs valid for 60 minutes only. | High | Benchmark/security tests confirm the target latency and that links become invalid after 60 minutes. | Limits the exposure window for high-value source files. |
+| NFR-002 | Security | Access to commission data and assets shall be authorized by authenticated role and commission ownership; final assets shall not be directly publicly accessible. | High | Tests confirm a client can access only authorized commissions and that unauthenticated/public requests cannot retrieve private final assets. | Protects client, artist, payment, and intellectual-property data. |
