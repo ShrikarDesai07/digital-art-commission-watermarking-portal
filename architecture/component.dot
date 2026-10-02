@@ -1,0 +1,29 @@
+
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.35, nodesep=0.55, ranksep=1.0, fontname="Arial"];
+  node [shape=box, style="rounded", fontname="Arial", fontsize=11, margin="0.18,0.12"];
+  edge [fontname="Arial", fontsize=9, color="#333333"];
+
+  Portal [label="<<component>>\nClient & Artist Portal"];
+  Order [label="<<component>>\nOrder Manager Component"];
+  Payment [label="<<component>>\nPayment Service Component"];
+  Watermark [label="<<component>>\nWatermark Service"];
+  Storage [label="<<component>>\nAsset Storage & Secure Delivery"];
+
+  Portal -> Order [label="Order API\n<<required>>", style=dashed];
+  Order -> Portal [label="Order Status / Review API\n<<provided>>", style=dashed];
+
+  Order -> Payment [label="Payment Processing API\n<<required>>", style=dashed];
+  Payment -> Order [label="Payment Verification Event\n<<provided>>", style=dashed];
+
+  Order -> Watermark [label="WIP Watermark API\n<<required>>", style=dashed];
+  Watermark -> Order [label="Watermarked Asset Reference\n<<provided>>", style=dashed];
+
+  Order -> Storage [label="Asset Metadata / Release API\n<<required>>", style=dashed];
+  Storage -> Portal [label="Secure Download / Signed URL\n<<provided>>", style=dashed];
+
+  Watermark -> Storage [label="WIP Asset Store\n<<required>>", style=dashed];
+  Storage -> Watermark [label="Object Storage API\n<<provided>>", style=dashed];
+
+  {rank=same; Payment; Watermark}
+}
