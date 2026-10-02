@@ -1,0 +1,48 @@
+
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad=0.35, nodesep=0.55, ranksep=0.9, fontname="Arial"];
+  node [fontname="Arial", fontsize=11];
+  edge [fontname="Arial", fontsize=9];
+
+  Client [shape=box, label="Client Buyer"];
+  Artist [shape=box, label="Digital Artist"];
+
+  subgraph cluster_system {
+    label="Digital Art Commission & Watermarking Portal";
+    fontsize=14;
+    color="#777777";
+    style="rounded";
+
+    UC1 [shape=ellipse, label="Submit Creative Brief"];
+    UC2 [shape=ellipse, label="Create / Manage Commission"];
+    UC3 [shape=ellipse, label="Upload WIP Draft"];
+    UC4 [shape=ellipse, label="Apply Dynamic Watermark"];
+    UC5 [shape=ellipse, label="Review WIP"];
+    UC6 [shape=ellipse, label="Submit Feedback / Approval"];
+    UC7 [shape=ellipse, label="Make Milestone Payment"];
+    UC8 [shape=ellipse, label="Verify Payment"];
+    UC9 [shape=ellipse, label="Upload Final Asset"];
+    UC10 [shape=ellipse, label="Unlock Final Asset"];
+    UC11 [shape=ellipse, label="Download Final Asset"];
+    UC12 [shape=ellipse, label="Generate Signed URL"];
+  }
+
+  Client -> UC1;
+  Client -> UC5;
+  Client -> UC6;
+  Client -> UC7;
+  Client -> UC11;
+
+  Artist -> UC2;
+  Artist -> UC3;
+  Artist -> UC9;
+
+  UC1 -> UC2 [label="<<include>>", style=dashed];
+  UC3 -> UC4 [label="<<include>>", style=dashed];
+  UC7 -> UC8 [label="<<include>>", style=dashed];
+  UC11 -> UC12 [label="<<include>>", style=dashed];
+
+  UC6 -> UC5 [label="<<extend>>", style=dashed, dir=back];
+
+  {rank=same; Client; Artist}
+}

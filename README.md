@@ -1,77 +1,109 @@
-# Digital Art Commission & Watermarking Portal
+# MyProject_DigitalArtWatermarking
 
-Software Engineering lab repository for **Problem Statement #58 — Digital Art Commission & Watermarking Portal**.
+## Software Engineering - Individual Project
 
-The system supports a commission workflow in which a Client Buyer submits a creative brief, a Digital Artist submits watermarked WIP drafts, milestone payment is processed, and the final high-resolution source file is released only after payment verification.
-
-## Repository Deliverables
-
-| Path | Deliverable |
+| Field | Details |
 |---|---|
-| `requirements/requirements.md` | Exactly 5 Functional Requirements + 2 Non-Functional Requirements |
-| `uml/use-case-diagram.png` | UML Use-Case Diagram |
-| `uml/use-case-diagram.pdf` | Printable Use-Case Diagram |
-| `docs/use-case-flow-specification.docx` | One-page core use-case flow |
-| `docs/use-case-flow-specification.pdf` | PDF version of the flow specification |
-| `architecture/component-diagram.png` | UML Component Diagram |
-| `architecture/component-diagram.pdf` | Printable Component Diagram |
-| `docs/architecture-justification.docx` | One-page architecture justification |
-| `docs/architecture-justification.pdf` | PDF version of architecture justification |
-| `docs/problem-statement.md` | Problem statement used for the design |
-| `README.md` | Repository guide |
+| Student Name | Shrikar Desai |
+| SRN | PES1UG24CS916 |
+| Section | 4H |
+| Problem Statement | #58 |
+| Project Name | Digital Art Commission & Watermarking Portal |
+| Domain | Media, Events & Community |
 
-## Architecture
+## Project Overview
 
-**Selected architectural style: Microservices Architecture**
+An art commission platform where clients submit visual creative briefs, artists submit watermarked WIP progress drafts, and final high-resolution source files unlock upon milestone payment.
 
-Main components required by the Lab 3 handout:
-- Order Manager Component
-- Payment Service Component
+## Repository Organization
 
-Additional components:
-- Client & Artist Portal
-- Watermark Service
-- Asset Storage & Secure Delivery
+This repository follows the individual-project submission structure communicated for the Software Engineering lab.
 
-The component diagram shows provided/required service interfaces and the main data/control flow.
+### 1-RE
+Requirements Engineering deliverables:
+- Problem statement
+- Exactly 5 Functional Requirements
+- Exactly 2 Non-Functional Requirements
+- Requirements Traceability Matrix (RTM)
+- Core use-case flow specification
 
-## UML Relationships
+### 2-Architectural-Diagram
+Architecture and UML deliverables:
+- UML Use-Case Diagram
+- UML Component Diagram
+- Editable diagram source files
+- Architecture justification
 
-The use-case diagram includes:
-- `<<include>>` relationships for mandatory sub-functions.
-- `<<extend>>` relationship for optional review feedback.
+**Selected architectural style:** Microservices Architecture
 
-## Suggested GitHub Submission Structure
+### 3-GitHub-Jira-Screenshots
+Evidence from GitHub and Jira:
+- Repository/project creation screenshots
+- Commit/history evidence
+- Jira project / board / issue screenshots
+
+> Add only actual screenshots captured from your GitHub and Jira work.
+
+### 4-SRS-WBS
+Software Requirements Specification and Work Breakdown Structure:
+- SRS document
+- WBS / work-breakdown steps
+
+### 5-GitHub-Copilot
+GitHub Copilot evidence:
+- Screenshots of Copilot-generated or Copilot-assisted code, and/or
+- Repository link containing the generated code
+
+### 6-Software-Testing
+Software Testing practice deliverables:
+- Assigned game application repository/reference
+- Test cases and observed results
+- Bug/patch evidence
+- Retest evidence after the fix
+- Final repository link after fixing the code
+
+## Current Deliverables
+
+- [x] Problem Statement #58
+- [x] 5 Functional Requirements
+- [x] 2 Non-Functional Requirements
+- [x] Requirements Traceability Matrix (RTM)
+- [x] UML Use-Case Diagram with `<<include>>` and `<<extend>>`
+- [x] Use-Case Flow Specification
+- [x] UML Component Diagram
+- [x] Architecture justification
+- [ ] GitHub/Jira screenshots - add your real evidence
+- [ ] SRS and WBS - add when completed
+- [ ] GitHub Copilot evidence - add your real evidence
+- [ ] Software Testing evidence - add after the assigned testing exercise
+
+## Repository Structure
 
 ```text
-digital-art-commission-watermarking-portal/
+MyProject_DigitalArtWatermarking/
 ├── README.md
-├── requirements/
-│   └── requirements.md
-├── uml/
+├── .gitignore
+├── 1-RE/
+│   ├── problem-statement.md
+│   ├── requirements.md
+│   ├── requirements.pdf
+│   ├── use-case-flow-specification.docx
+│   └── use-case-flow-specification.pdf
+├── 2-Architectural-Diagram/
 │   ├── use-case-diagram.png
-│   └── use-case-diagram.pdf
-├── architecture/
+│   ├── use-case-diagram.pdf
+│   ├── use-case.dot
 │   ├── component-diagram.png
-│   └── component-diagram.pdf
-└── docs/
-    ├── problem-statement.md
-    ├── use-case-flow-specification.docx
-    ├── use-case-flow-specification.pdf
-    ├── architecture-justification.docx
-    └── architecture-justification.pdf
+│   ├── component-diagram.pdf
+│   ├── component.dot
+│   ├── architecture-justification.docx
+│   └── architecture-justification.pdf
+├── 3-GitHub-Jira-Screenshots/
+│   └── README.md
+├── 4-SRS-WBS/
+│   └── README.md
+├── 5-GitHub-Copilot/
+│   └── README.md
+└── 6-Software-Testing/
+    └── README.md
 ```
-
-## Submission Checklist
-
-- [x] Problem statement captured
-- [x] 5 FRs: FR-001 to FR-005
-- [x] 2 NFRs: NFR-001 and NFR-002
-- [x] Use-case diagram with actors and `<<include>>` / `<<extend>>`
-- [x] One-page use-case flow with preconditions, postconditions, main success scenario and alternate flow
-- [x] Component diagram with at least 5 components
-- [x] At least 4 interfaces between components
-- [x] Provided/required interface notation
-- [x] Architecture selection and justification
-- [x] Security advantage
-- [x] Performance benefit
